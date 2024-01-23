@@ -1,0 +1,14 @@
+[Unit]
+Description=temperature starter systemd service unit file.
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+# The command that should be run when starting this service.
+Type=idle
+ExecStart=/bin/bash /home/pi/temperature/temperature.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
